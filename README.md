@@ -125,11 +125,22 @@ Số lượng lớn các bản ghi dư thừa, khiến thuật toán học bị 
 | Probe        | ipsweep, nmap, portsweep, satan                                             |
 
 - Thống kế số lượng mẫu theo từng loại trên 2 tập Train và Test của NSL – KDD
+  | NSL - KDD   | Total  | Normal | Dos    | Probe | R2L  | U2R |
+|-------------|--------|--------|--------|-------|------|-----|
+| KDDTrain+   | 125972 | 67342  | 45927  | 11656 | 995  | 52  |
+| KDDTest+    | 22543  | 9711   | 5741   | 2199  | 1106 | 37  |
+
 - Kích thướt file train:
+  ![Kích thướt file train](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/kich-thuot-file-train.png)
 - Số lượng từng đặc trưng danh mục của tập train:
+ ![Số lượng đặc trưng](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/so-luong-dac-trung.png)
 - Đọc file dataset với pandas:
+  ![Doc file pandas](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/docfile-pandas.png)
 - Mô tả dataset với pandas:
+  ![Mô tả dataset với pandas](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/mota-pandas.png)
 - Số lượng nhãn tấn công của dataset:
+  ![Số lượng nhãn tấn công của dataset](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/so-luong-nhan-tan-cong.png)
+ ![Số lượng nhãn tấn công của dataset 2](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/so-luong-nhan-tan-cong-2.png)
 
 ## [**4. Anomaly Detection Using Deep Autoencoder**](#anomaly-detection-using-deep-autoencoder)
 
@@ -163,7 +174,8 @@ Quy trình này ánh xạ các đặc trưng 41 chiều thành 122 chiều: 38 l
 
 #### iii. Quy trình tiền xử lý trong bài báo cáo
 
-**Phân phối số lượng số 0 trong mỗi tính năng số của tập huấn luyện.** Các tính năng có giá trị null lớn hơn 80% được mô tả.
+**Phân phối số lượng số 0 trong mỗi tính năng số của tập huấn luyện.** Các tính năng có giá trị null lớn hơn 80% được mô tả bằng màu đỏ và bị loại bỏ khỏi phân tích.
+![Phân phối số lượng số 0](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/phan-phoi-0.png)
 
 Đọc dữ liệu từ file KDDTrain+.txt.
 Sau khi gán tên cho từng cột, chúng ta nhận thấy cột với tên ‘level’ là dư thừa không cần thiết cho quá trình train vì vậy tiến thành bỏ toàn bộ giá trị cột này. Tiếp tục thay đổi tên các nhãn tấn công ứng với từng loại (DoS, R2L, Probe, U2R).
@@ -171,7 +183,9 @@ Sau khi gán tên cho từng cột, chúng ta nhận thấy cột với tên ‘
 **Data Scaling** …
 
 - Sau khi hiệu chỉnh nhãn, loại bỏ cột không cần thiết cho quá trình train data, chúng ta sẽ thực hiện chuẩn tất cả dữ liệu dạng số (numeric) với cách thức “StandardScaler” được sự hỗ trợ từ thư viện Scikit learn.
+  ![Data scaling](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/data-scaling.png)
 - Với các đặc trưng ở dạng danh mục (categorical feature) thì xử lý chúng với “one hot encoding”.
+  ![One hoting endcoding](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/one-hot-encoding.png)
 - Đặt tên giả cho các đặc trưng danh mục:
   Xử lý nhãn với LabelEncoder trong thư viện Scikit Learn, nhớ fit và transform quá trình này lại. Bước tiếp theo chúng ta sẽ trích chọn đặc trưng.
 
@@ -191,7 +205,7 @@ Sau khi gán tên cho từng cột, chúng ta nhận thấy cột với tên ‘
 Trích chọn đặc trưng với chọn theo hệ số Độ tương quan (Correlation). Sử dụng độ tương quan giữa 2 hay nhiều biến cũng là một cách hay để loại bỏ những feature có độ tương quan thấp. Việc loại bỏ các feature có độ tương quan cao với nhau giúp mô hình linear hoạt động tốt hơn, tránh bias giữa các features. Tìm các thuộc tính có tương quan hơn 0,5 với thuộc tính nhãn tấn công được mã hóa. Nhớ sau khi loại bỏ những giá trị dưới ngưỡng 0.5, thì phải trả lại nhãn phân lớp theo đúng thứ tự.
 Trong quá trình này có sinh ra giá trị NAN, tiếp tục xử lý giá trị bị thiếu này bằng SimpleImputer với thư viện Scikit Learn.
 Biểu đồ giá trị giao động sau khi trích chọn thuộc tính:
-
+![Biểu đồ giá trị sau khi trích chọn thuộc tính](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/trich-chon-thuoc-tinh.png)
 Đến gây là gần hoàn thiện quá trình tiền xử lý dữ liệu và trích chọn đặc trưng. Tiếp theo “Join” nối đặc trưng đã chọn với những đặc trưng tdanh mục được one-hot-encoded thành một dataframe duy nhất.
 Lưu lại toàn bộ quá trình này ra file csv để phục vụ cho quá trình tiếp theo là phân lớp với mô hình Deep AutoEncoder.
 
@@ -259,12 +273,14 @@ Cuối cùng, toàn bộ mạng (AE + softmax) được đào tạo bằng phư�
 
 Quá trình đào tạo bị dừng khi hàm mất cross entropy bão hòa. Trong nghiên cứu này, sự hội tụ được quan sát sau 300 lần lặp.
 
+![autoencoder](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/auto-encoder.png)
+
 ## [**5. Model Evaluation and Experimental Results**](#model-evaluation-and-experimental-results)
 
 ### [**5.1 Evaluation Metrics**](#evaluation-metrics)
 
 - Trong những bài toán này, người ta thường định nghĩa lớp dữ liệu quan trọng hơn cần được xác định đúng là lớp Positive (P-dương tính), lớp còn lại được gọi là Negative (N-âm tính). Ta định nghĩa True Positive (TP), False Positive (FP), True Negative (TN), False Negative (FN) dựa trên confusion matrix chưa chuẩn hoá như sau:
-
+![Các hệ số đánh giá](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/cac-he-so-danh-gia.png)
 - True positives: Các điểm Positive thực được nhận Đúng là Positive
   False positives: Các điểm Negative thực được nhận Sai là Positive
   True negatives: Các điểm Negative thực được nhận Đúng là Negative
@@ -272,7 +288,7 @@ Quá trình đào tạo bị dừng khi hàm mất cross entropy bão hòa. Tron
   Recall:  Thể hiện khả năng phát hiện tất cả các postivie, tỷ lệ này càng cao thì cho thấy khả năng bỏ sót các điểm Positive là thấp.
   Precision: Thể hiện sự chuẩn xác của việc phát hiện các điểm Positive. Số này càng cao thì model nhận các điểm Positive càng chuẩn.
   F1 score: Là số dung hòa Recall và Precision giúp ta có căn cứ để lựa chọn model. F1 càng cao càng tốt ;).
-
+  ![Precision](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/precision.png)
 ### [**5.2 Model Assessment Using Metrics**](#model-assessment-using-metrics)
 
 - Với tấn công dạng DoS:
