@@ -125,7 +125,8 @@ Số lượng lớn các bản ghi dư thừa, khiến thuật toán học bị 
 | Probe        | ipsweep, nmap, portsweep, satan                                             |
 
 - Thống kế số lượng mẫu theo từng loại trên 2 tập Train và Test của NSL – KDD
-  | NSL - KDD   | Total  | Normal | Dos    | Probe | R2L  | U2R |
+  
+| NSL - KDD   | Total  | Normal | Dos    | Probe | R2L  | U2R |
 |-------------|--------|--------|--------|-------|------|-----|
 | KDDTrain+   | 125972 | 67342  | 45927  | 11656 | 995  | 52  |
 | KDDTest+    | 22543  | 9711   | 5741   | 2199  | 1106 | 37  |
