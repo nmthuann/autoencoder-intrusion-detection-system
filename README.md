@@ -315,19 +315,22 @@ Trong bài báo này, chúng tôi đã giới thiệu một hệ thống DL đư
 ## [**7. References**](#references)
 
 
-[1] Statistical Analysis Driven Optimized Deep Learning System for Intrusion Detection, Cosimo Ieracitano, Ahsan Adeel, Mandar Gogate, Kia Dashtipour, Francesco Carlo Morabito, Hadi Larijani, Ali Raza, and Amir Hussain, United Kingdom.
-[2] Link download NSL - KDD Dataset.
-[3] Autoencoder là gì? Kiến trúc và cách tạo Autoencoder.
-[4] Mạng MLP (Multi-layer Perceptron) là gì? Nền tảng của Deep Learning.
-[5] Alrawashdeh, K., Purdy, C.: Toward an online anomaly intrusion detection system based on deep learning. In: Machine Learning and Applications (ICMLA), 2016 15th IEEE International Conference on. pp. 195–200. IEEE (2016).
-[6] Tang, T.A., Mhamdi, L., McLernon, D., Zaidi, S.A.R., Ghogho, M.: Deep learning approach for network intrusion detection in software defined networking. In: Wireless Networks and Mobile Communications (WINCOM), 2016 International Conference on. pp. 258–263. IEEE (2016).
-[7] Kim, J., Shin, N., Jo, S.Y., Kim, S.H.: Method of intrusion detection using deep neural network. In: Big Data and Smart Computing (BigComp), 2017 IEEE International Conference on. pp. 313–316. IEEE (2017).
-[8] Javaid, A., Niyaz, Q., Sun, W., Alam, M.: A deep learning approach for network intrusion detection system. In: Proceedings of the 9th EAI International Conference on Bio-inspired Information and Communications Technologies (formerly BIONETICS). pp. 21–26. ICST (Institute for Computer Sciences, Social-Informatics and Telecommunications Engineering) (2016).
-[9] Shone, N., Ngoc, T.N., Phai, V.D., Shi, Q.: A deep learning approach to network intrusion detection. IEEE Transactions on Emerging Topics in Computational Intelligence 2(1), 41–50 (2018).
-[10] Abeshu, A., Chilamkurti, N.: Deep learning: The frontier for distributed attack detection in fog-to-things computing. IEEE Communications Magazine 56(2), 169– 175 (2018)
-[11] Improving Performance of Autoencoder-based Network Anomaly Detection on NSL-KDD dataset, WEN XU, JULIAN JANG-JACCARD, AMARDEEP SINGH, YUANYUAN WEI and FARIZA SABRINA202.
-[12] Network-Intrusion-Detection-Using-Deep-Learning, Abhinav Bhardwaj, 2020 [12].
-[13] Phương pháp lựa chọn feature trong Machine Learning.
-[14] Stop Using 0.5 as the Threshold for Your Binary Classifier, Eduardo Blancas, 2022.
-[15] A Subset Feature Elimination Mechanism for Intrusion Detection System, (Herve Nkiama, Syed Zainudeen Mohd Said, Muhammad Saidu), Malaysia, 2016.
+- [1] Statistical Analysis Driven Optimized Deep Learning System for Intrusion Detection, Cosimo Ieracitano, Ahsan Adeel, Mandar Gogate, Kia Dashtipour, Francesco Carlo Morabito, Hadi Larijani, Ali Raza, and Amir Hussain, United Kingdom.
+
+- [2] Link download NSL - KDD Dataset.
+
+- [3] Autoencoder là gì? Kiến trúc và cách tạo Autoencoder.
+
+- [4] Mạng MLP (Multi-layer Perceptron) là gì? Nền tảng của Deep Learning.
+- [5] Alrawashdeh, K., Purdy, C.: Toward an online anomaly intrusion detection system based on deep learning. In: Machine Learning and Applications (ICMLA), 2016 15th IEEE International Conference on. pp. 195–200. IEEE (2016).
+- [6] Tang, T.A., Mhamdi, L., McLernon, D., Zaidi, S.A.R., Ghogho, M.: Deep learning approach for network intrusion detection in software defined networking. In: Wireless Networks and Mobile Communications (WINCOM), 2016 International Conference on. pp. 258–263. IEEE (2016).
+- [7] Kim, J., Shin, N., Jo, S.Y., Kim, S.H.: Method of intrusion detection using deep neural network. In: Big Data and Smart Computing (BigComp), 2017 IEEE International Conference on. pp. 313–316. IEEE (2017).
+- [8] Javaid, A., Niyaz, Q., Sun, W., Alam, M.: A deep learning approach for network intrusion detection system. In: Proceedings of the 9th EAI International Conference on Bio-inspired Information and Communications Technologies (formerly BIONETICS). pp. 21–26. ICST (Institute for Computer Sciences, Social-Informatics and Telecommunications Engineering) (2016).
+- [9] Shone, N., Ngoc, T.N., Phai, V.D., Shi, Q.: A deep learning approach to network intrusion detection. IEEE Transactions on Emerging Topics in Computational Intelligence 2(1), 41–50 (2018).
+- [10] Abeshu, A., Chilamkurti, N.: Deep learning: The frontier for distributed attack detection in fog-to-things computing. IEEE Communications Magazine 56(2), 169– 175 (2018)
+- [11] Improving Performance of Autoencoder-based Network Anomaly Detection on NSL-KDD dataset, WEN XU, JULIAN JANG-JACCARD, AMARDEEP SINGH, YUANYUAN WEI and FARIZA SABRINA202.
+- [12] Network-Intrusion-Detection-Using-Deep-Learning, Abhinav Bhardwaj, 2020 [12].
+- [13] Phương pháp lựa chọn feature trong Machine Learning.
+- [14] Stop Using 0.5 as the Threshold for Your Binary Classifier, Eduardo Blancas, 2022.
+- [15] A Subset Feature Elimination Mechanism for Intrusion Detection System, (Herve Nkiama, Syed Zainudeen Mohd Said, Muhammad Saidu), Malaysia, 2016.
 
