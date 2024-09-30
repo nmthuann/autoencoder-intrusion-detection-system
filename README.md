@@ -88,6 +88,7 @@ Bộ dataset NSL – KDD được ra đời nhằm giải quyết những vấn 
 ### [**2.3 Number of Features**](#number-of-features)
 
 Có 38 feature (numeric) và 3 feature (categorical) là protocol_type, service, flag.
+![Mô tả hình ảnh](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/feature-38.png)
 
 ### [**2.4 Comparison with KDD'99**](#comparison-with-kdd99)
 
@@ -139,12 +140,14 @@ Số lượng lớn các bản ghi dư thừa, khiến thuật toán học bị 
 **Outlier analysis (phân tích giá trị ngoại lai):** Việc loại bỏ các giá trị ngoại lai khỏi tập dữ liệu trước khi thực hiện chuẩn hóa dữ liệu là một nhiệm vụ thiết yếu. Trong nghiên cứu này, công cụ ước tính Độ lệch tuyệt đối trung bình - Median Absolute Deviation (MAD) được sử dụng để phát hiện các giá trị ngoại lai.
 
 **Công thức:**
-\[ \text{MAD} = C \times \text{median} (x*{ij} - |\text{median} (x*{ij})|) \]
+$$
+\text{MAD} = C \times \text{median} (x_{ij} - |\text{median} (x_{ij})|)
+$$
 
 Trong đó:
 
 - \( C = 1,4826 \) là hằng số
-- \( x*{ij} \) được coi là ngoại lệ khi \( x*{ij} > k \times \text{MAD} \) (với \( k = 10 \)).
+- \( x_{ij} \) được coi là ngoại lệ khi \( x_{ij} > k \times \text{MAD} \) (với \( k = 10 \)).
 
 Kích thước ban đầu của tập train và test đã giảm từ 125973 xuống 85421 và từ 22544 đến 11925.
 
