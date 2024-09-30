@@ -139,6 +139,7 @@ Số lượng lớn các bản ghi dư thừa, khiến thuật toán học bị 
   ![Doc file pandas](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/docfile-pandas.png)
 - Mô tả dataset với pandas:
   ![Mô tả dataset với pandas](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/mota-pandas.png)
+  ![Biểu đồ phân phối](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/Pie_chart_multi.png)
 - Số lượng nhãn tấn công của dataset:
   ![Số lượng nhãn tấn công của dataset](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/so-luong-nhan-tan-cong.png)
  ![Số lượng nhãn tấn công của dataset 2](https://github.com/nmthuann/autoencoder-intrusion-detection-system/blob/main/images/so-luong-nhan-tan-cong-2.png)
@@ -298,10 +299,18 @@ Quá trình đào tạo bị dừng khi hàm mất cross entropy bão hòa. Tron
 - Với tấn công dạng R2L:
 
 ### [**5.3 Result Analysis**](#result-analysis)
+| Attack Class | Accuracy | Precision | Recall | F_measure |
+|--------------|----------|-----------|--------|-----------|
+| DoS          | 91%      | 97%       | 89%    | 83%       |
+| Probe        | 91%      | 80%       | 73%    | 76%       |
+| R2L          | 77%      | 26%       | 10%    | 20%       |
+| U2R          | 98%      | 12%       | 12%    | 12%       |
+
+Theo bảng thông kê phía trên, ta thấy với mô hình Deep AE classifier cho ra kết quả Pression % từng loại mã tấn công khác nhau theo thứ tự giảm dần như sau: DoS, Probe, R2L, U2R. Với mã thuộc loại U2R có mức lệch khá cao do nó có số lượng mẫu trong dataset khá ít và ngược lại với mã DoS cho ra kết quả ổn định hơn vì nó có số lượng data nhiều hơn hẳn các mã còn lại.
 
 ## [**6. Conclusion**](#conclusion)
 
-Trong bài báo này, chúng tôi đã giới thiệu một hệ thống DL được tối ưu hóa dựa trên thống kê để phát hiện xâm nhập. Bộ dữ liệu NSL-KDD được sử dụng làm điểm chuẩn để xác định các mẫu lưu lượng mạng bình thường và bất thường. Các tính năng tương quan nhất được trích xuất bằng các phương pháp thống kê và là đầu vào của trình phân loại AE sâu. Tính khả thi và hiệu quả của mô hình đề xuất được đánh giá bằng cách sử dụng các phép đo chính xác, thu hồi, đo lường F và độ chính xác. Đánh giá so sánh giữa bộ mã hóa tự động sâu được đề xuất với bộ phân loại MLP nông và các mô hình hiện đại cho thấy bộ phân loại AE sâu vượt trội hơn tất cả các phương pháp khác và đạt độ chính xác 87%. Các tính năng hoạt động bao gồm một hệ thống mạnh mẽ hơn có khả năng xử lý các hạn chế do bộ dữ liệu NSL-KDD thể hiện (các giá trị tính năng không nhất quán, các lớp không cân bằng) và khả năng mở rộng của nó trong các ứng dụng thời gian thực phát hiện xâm nhập theo ngữ cảnh.
+Trong bài báo này, chúng tôi đã giới thiệu một hệ thống DL được tối ưu hóa dựa trên thống kê để phát hiện xâm nhập. Bộ dữ liệu NSL-KDD được sử dụng làm điểm chuẩn để xác định các mẫu lưu lượng mạng bình thường và bất thường. Các tính năng tương quan nhất được trích xuất bằng các phương pháp thống kê và là đầu vào của trình phân loại AE sâu. 	Tính khả thi và hiệu quả của mô hình đề xuất được đánh giá bằng cách sử dụng các phép đo chính xác, thu hồi, đo lường F và độ chính xác. Đánh giá so sánh giữa bộ mã hóa tự động sâu được đề xuất với bộ phân loại MLP nông và các mô hình hiện đại cho thấy bộ phân loại AE sâu vượt trội hơn tất cả các phương pháp khác và đạt độ chính xác 87%. Các tính năng hoạt động bao gồm một hệ thống mạnh mẽ hơn có khả năng xử lý các hạn chế do bộ dữ liệu NSL-KDD thể hiện (các giá trị tính năng không nhất quán, các lớp không cân bằng) và khả năng mở rộng của nó trong các ứng dụng thời gian thực phát hiện xâm nhập theo ngữ cảnh.
 
 ## [**7. References**](#references)
 
